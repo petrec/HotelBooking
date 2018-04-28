@@ -12,8 +12,15 @@ public class Reservation {
         this.client = client;
     }
 
-    //addReservation
-    checkAvailability
-    cancelReservation
+    public Date getCheckIn() {
+        return checkIn;
+    }
 
+    public Date getCheckOut() {
+        return checkOut;
+    }
+
+    public Client getClient() {
+        return client;
+    }
 }

@@ -9,4 +9,17 @@ public class Client {
         this.name = name;
         this.cod = cod;
     }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getCod() {
+        return cod;
+    }
+
+    @Override
+    public String toString() {
+        return this.name;
+    }
 }
