@@ -1,6 +1,7 @@
 package com.sda.hotel;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 public class Room {
@@ -17,5 +18,13 @@ public class Room {
         this.roomNumber = roomNumber;
         this.roomType = roomType;
         this.reservation = new ArrayList<>();
+    }
+
+    //addReservation
+    public boolean addReservation(Reservation rez){
+    }
+
+    public boolean checkAvailability(Reservation rez){
+
     }
 }
