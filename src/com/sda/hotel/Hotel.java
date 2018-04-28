@@ -1,5 +1,7 @@
 package com.sda.hotel;
 
+import java.util.ArrayList;
+
 public class Hotel {
     private String hotelName;
     private ArrayList<Room> roomsList;
@@ -7,7 +9,7 @@ public class Hotel {
 
     public Hotel(String hotelName, int hotelRoomCapacity) {
         this.hotelName = hotelName;
-        this.roomsList = new ArrayList<Room>(hotelRoomCapacity);
+        this.roomsList = new ArrayList<>(hotelRoomCapacity);
         this.hotelRoomCapacity = hotelRoomCapacity;
     }
 
