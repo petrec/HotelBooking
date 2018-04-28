@@ -5,7 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 public class Room {
-    private enum RoomType {
+    public enum RoomType {
         SINGLE,
         DOUBLE
     }
