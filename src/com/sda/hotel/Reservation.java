@@ -9,6 +9,6 @@ public class Reservation {
     public Reservation(Date checkIn, Date checkOut, Client client){
         this.checkIn = checkIn;
         this.checkOut = checkOut;
-        this.Client = client;
+        this.client = client;
     }
 }

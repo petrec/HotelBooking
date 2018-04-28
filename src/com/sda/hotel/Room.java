@@ -1,9 +1,12 @@
 package com.sda.hotel;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Room {
     private enum RoomType {
         SINGLE,
-        DOUBLE;
+        DOUBLE
     }
 
     private int roomNumber;
@@ -13,6 +16,6 @@ public class Room {
     public Room(int roomNumber, RoomType roomType) {
         this.roomNumber = roomNumber;
         this.roomType = roomType;
-        this.reservation = new ArrayList<Reservation>();
+        this.reservation = new ArrayList<>();
     }
 }
