@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Room {
-    private enum RoomType {
+    public enum RoomType {
         SINGLE,
         DOUBLE
     }
