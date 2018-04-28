@@ -1,22 +1,22 @@
 package com.sda.hotel;
-import java.util.Date;
+import java.util.Calendar;
 
 public class Reservation {
 
-    private Date checkIn, checkOut;
+    private Calendar checkIn, checkOut;
     private Client client;
 
-    public Reservation(Date checkIn, Date checkOut, Client client){
+    public Reservation(Calendar checkIn, Calendar checkOut, Client client){
         this.checkIn = checkIn;
         this.checkOut = checkOut;
         this.client = client;
     }
 
-    public Date getCheckIn() {
+    public Calendar getCheckIn() {
         return checkIn;
     }
 
-    public Date getCheckOut() {
+    public Calendar getCheckOut() {
         return checkOut;
     }
 
