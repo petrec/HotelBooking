@@ -11,4 +11,9 @@ public class Reservation {
         this.checkOut = checkOut;
         this.client = client;
     }
+
+    //addReservation
+    checkAvailability
+    cancelReservation
+
 }
