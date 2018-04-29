@@ -58,6 +58,13 @@ public class Room {
         return true;
     }
 
+    public void changeReservation(Reservation reservationOld, Reservation reservationNew){
+        this.reservation.remove(reservationOld);
+        if(checkAvailability(reservationNew)){
+            this.reservation.add(reservationNew);
+        }
+        else this.reservation.add(reservationOld);
+  
     public void cancelReservation(Reservation reservation){
         if(!checkAvailability(reservation)){
             this.reservation.remove(reservation);

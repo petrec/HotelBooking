@@ -1,5 +1,6 @@
 package com.sda.hotel;
 import java.util.Calendar;
+import java.util.Objects;
 
 public class Reservation {
 
@@ -22,5 +23,20 @@ public class Reservation {
 
     public Client getClient() {
         return client;
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Reservation that = (Reservation) o;
+        return Objects.equals(checkIn, that.checkIn) &&
+                Objects.equals(checkOut, that.checkOut) &&
+                Objects.equals(client, that.client);
+    }
+
+    @Override
+    public int hashCode() {
+
+        return Objects.hash(checkIn, checkOut, client);
     }
 }
