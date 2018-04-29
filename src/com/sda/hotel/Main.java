@@ -12,10 +12,14 @@ public class Main {
         Room room1 = new Room(1, Room.RoomType.SINGLE);
 
         System.out.println(room1.addReservation(rez1));
-        dataIn = Utils.setCalendar(2019, 02, 18);
-        dataOut = Utils.setCalendar(2019, 02,24);
+        dataIn = Utils.setCalendar(2019, 02, 24);
+        dataOut = Utils.setCalendar(2019, 02,26);
         rez1 = new Reservation(dataIn, dataOut, client1);
         System.out.println(room1.addReservation(rez1));
+
+        room1.printReservationsBy(Utils.setCalendar(2019, 02, 27));
+        Client client2 = new Client("Ion", "abc2");
+        room1.printReservationsBy(client2);
 
     }
 }
