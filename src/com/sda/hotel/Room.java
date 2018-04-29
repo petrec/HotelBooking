@@ -114,13 +114,12 @@ public class Room {
             System.out.println(this.roomNumber + "\t is available");
     }
 
-    public void changeReservation(Reservation reservationOld, Reservation reservationNew){
+    public void changeReservation(Reservation reservationOld, Reservation reservationNew) {
         this.reservation.remove(reservationOld);
-        if(checkAvailability(reservationNew)){
+        if (checkAvailability(reservationNew)) {
             this.reservation.add(reservationNew);
-        }
-        else this.reservation.add(reservationOld);
-
+        } else this.reservation.add(reservationOld);
+    }
     public void cancelReservation(Reservation reservation){
         if(!checkAvailability(reservation)){
             this.reservation.remove(reservation);
