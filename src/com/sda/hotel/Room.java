@@ -57,8 +57,10 @@ public class Room {
         }
         return true;
     }
-//
-//    cancelReservation
-//    change
-//    print
+
+    public void cancelReservation(Reservation reservation){
+        if(!checkAvailability(reservation)){
+            this.reservation.remove(reservation);
+        }
+    }
 }
