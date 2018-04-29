@@ -28,26 +28,31 @@ public class Room {
         return roomType;
     }
 
-    public boolean addReservation(Reservation rez) {
-        if (!checkAvailability(rez)) {
+    public boolean addReservation(Reservation rez){
+        if(!checkAvailability(rez)){
             return false;
-        } else {
+        }
+        else{
             this.reservation.add(rez);
             return true;
         }
     }
-
-    public boolean checkAvailability(Reservation rez) {
-        for (Reservation r : this.reservation) {
-            if (rez.getCheckIn().equals(r.getCheckIn()) && rez.getCheckOut().equals(r.getCheckOut())) {
+    
+    public boolean checkAvailability(Reservation rez){
+        for(Reservation r : this.reservation){
+            if(rez.getCheckIn().equals(r.getCheckIn()) && rez.getCheckOut().equals(r.getCheckOut())) {
                 return false;
-            } else if (rez.getCheckIn().equals(r.getCheckOut()) && rez.getCheckOut().equals(r.getCheckIn())) {
+            }
+            else if(rez.getCheckIn().equals(r.getCheckOut()) && rez.getCheckOut().equals(r.getCheckIn())){
                 return false;
-            } else if (rez.getCheckIn().after(r.getCheckIn()) && rez.getCheckIn().before(r.getCheckOut())) {
+            }
+            else if(rez.getCheckIn().after(r.getCheckIn()) && rez.getCheckIn().before(r.getCheckOut())){
                 return false;
-            } else if (rez.getCheckOut().after(r.getCheckIn()) && rez.getCheckOut().before(r.getCheckOut())) {
+            }
+            else if(rez.getCheckOut().after(r.getCheckIn()) && rez.getCheckOut().before(r.getCheckOut())){
                 return false;
-            } else if (rez.getCheckIn().before(r.getCheckIn()) && rez.getCheckOut().after(r.getCheckOut())) {
+            }
+            else if(rez.getCheckIn().before(r.getCheckIn()) && rez.getCheckOut().after(r.getCheckOut())){
                 return false;
             }
         }
@@ -107,5 +112,18 @@ public class Room {
         }
         if (isAvailable)
             System.out.println(this.roomNumber + "\t is available");
+    }
+
+    public void changeReservation(Reservation reservationOld, Reservation reservationNew){
+        this.reservation.remove(reservationOld);
+        if(checkAvailability(reservationNew)){
+            this.reservation.add(reservationNew);
+        }
+        else this.reservation.add(reservationOld);
+
+    public void cancelReservation(Reservation reservation){
+        if(!checkAvailability(reservation)){
+            this.reservation.remove(reservation);
+        }
     }
 }
