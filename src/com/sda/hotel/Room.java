@@ -64,5 +64,10 @@ public class Room {
             this.reservation.add(reservationNew);
         }
         else this.reservation.add(reservationOld);
+  
+    public void cancelReservation(Reservation reservation){
+        if(!checkAvailability(reservation)){
+            this.reservation.remove(reservation);
+        }
     }
 }

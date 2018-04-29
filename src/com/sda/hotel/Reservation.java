@@ -24,7 +24,6 @@ public class Reservation {
     public Client getClient() {
         return client;
     }
-
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
